@@ -19,3 +19,7 @@ after installing the gem:
 Each line of the script will be presented at a numbered prompt. The line may be inspected
 and edited before execution with the enter key.
 
+# Further work
+
+Probably this could be done without patching rb-readline. It would be better to
+use the stock readline gem if possible. 
