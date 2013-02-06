@@ -1,0 +1,7 @@
+if [[ $# > 0 ]]
+then
+  ruby step.rb
+else 
+  echo "step - execute/edit shell script interactively line by line"
+  echo "usage: step <script file>"
+fi

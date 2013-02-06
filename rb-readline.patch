@@ -1,0 +1,24 @@
+diff -Naur rb-readline-0.4.2/lib/rbreadline.rb rb-readline-bak/lib/rbreadline.rb
+--- rb-readline-0.4.2/lib/rbreadline.rb	2013-02-06 00:46:55.000000000 -0800
++++ rb-readline-bak/lib/rbreadline.rb	2013-02-06 00:46:26.000000000 -0800
+@@ -1105,6 +1105,10 @@
+ 
+    module_function
+ 
++   def set_pre_input_hook(val) 
++     @rl_pre_input_hook = val 
++   end 
++
+    # Okay, now we write the entry_function for filename completion.  In the
+    # general case.  Note that completion in the shell is a little different
+    # because of all the pathnames that must be followed when looking up the
+@@ -3902,7 +3906,8 @@
+          rl_vi_insertion_mode(1, 'i')
+       end
+       if (@rl_pre_input_hook)
+-         send(@rl_pre_input_hook)
++         #send(@rl_pre_input_hook)
++         @rl_pre_input_hook.call()
+       end
+    end
+ 
