@@ -1,4 +1,7 @@
-require "rb-readline"
+require "rubygems"
+require "bundler/setup"
+
+require 'rb-readline'
 
 File.readlines(ARGV[0]).each_with_index do |line, index| 
   hook = proc { 
